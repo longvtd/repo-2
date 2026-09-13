@@ -6,7 +6,10 @@ import java.math.BigDecimal;
 @RequestMapping("/api/partner-orders")
 public class OrderController {
  private final OrderService service; public OrderController(OrderService service){this.service=service;}
- @PostMapping public long createOrder(@RequestParam String customerId,@RequestParam BigDecimal amount){return service.createOrder(customerId,amount);}
+ @PostMapping public long createOrder(@RequestParam String customerId,@RequestParam BigDecimal amount){
+     //test to commit createOrder
+     return service.createOrder(customerId,amount);
+ }
  @GetMapping("/health") public String health(){
      //test change controller api health
      return "B-OK";
